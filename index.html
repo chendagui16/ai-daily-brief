@@ -13,10 +13,7 @@
       padding: 40px 20px;
       color: #fff;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    .container { max-width: 900px; margin: 0 auto; }
     h1 {
       text-align: center;
       font-size: 2.8rem;
@@ -25,12 +22,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .subtitle {
-      color: #888;
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-    }
+    .subtitle { color: #888; text-align: center; margin-bottom: 40px; font-size: 1.1rem; }
     .section {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(10px);
@@ -39,129 +31,36 @@
       padding: 30px;
       margin-bottom: 24px;
     }
-    h2 {
-      color: #e94560;
-      margin-bottom: 20px;
-      font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    /* Date picker styles */
-    .date-picker {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
+    h2 { color: #e94560; margin-bottom: 20px; font-size: 1.4rem; display: flex; align-items: center; gap: 10px; }
+    .date-picker { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
     .date-picker input {
-      flex: 1;
-      min-width: 150px;
-      padding: 12px 16px;
-      border: 2px solid rgba(255,255,255,0.2);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      font-size: 16px;
+      flex: 1; min-width: 150px; padding: 12px 16px;
+      border: 2px solid rgba(255,255,255,0.2); border-radius: 10px;
+      background: rgba(255,255,255,0.1); color: #fff; font-size: 16px;
     }
-    .date-picker input:focus {
-      outline: none;
-      border-color: #e94560;
-    }
+    .date-picker input:focus { outline: none; border-color: #e94560; }
     .date-picker button {
-      padding: 12px 24px;
-      background: linear-gradient(135deg, #e94560, #ff6b6b);
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.2s;
+      padding: 12px 24px; background: linear-gradient(135deg, #e94560, #ff6b6b);
+      border: none; border-radius: 10px; color: white; font-size: 16px; cursor: pointer;
     }
-    .date-picker button:hover {
-      transform: scale(1.05);
-    }
-    
-    /* Grid styles */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-    }
+    .date-picker button:hover { transform: scale(1.05); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
     a.card {
-      display: block;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: all 0.3s;
+      display: block; background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1); padding: 20px;
+      border-radius: 12px; text-decoration: none; transition: all 0.3s;
     }
-    a.card:hover {
-      background: rgba(233,69,96,0.2);
-      border-color: #e94560;
-      transform: translateY(-4px);
-    }
-    .card .date {
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-    }
-    .card .weekday {
-      color: #888;
-      font-size: 0.9rem;
-    }
-    .card .tag {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 4px 10px;
-      background: rgba(233,69,96,0.3);
-      border-radius: 20px;
-      font-size: 0.8rem;
-      color: #ff6b6b;
-    }
-    
-    .empty {
-      color: #666;
-      font-style: italic;
-      text-align: center;
-      padding: 20px;
-    }
-    
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #666;
-    }
-    .footer a {
-      color: #e94560;
-    }
-    
-    /* Quick links */
-    .quick-links {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .quick-links a {
-      padding: 8px 16px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 20px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-    .quick-links a:hover {
-      background: #e94560;
-    }
-    
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      .section { padding: 20px; }
-    }
+    a.card:hover { background: rgba(233,69,96,0.2); border-color: #e94560; transform: translateY(-4px); }
+    .card .date { font-weight: bold; font-size: 1.1rem; margin-bottom: 4px; }
+    .card .weekday { color: #888; font-size: 0.9rem; }
+    .card .tag { display: inline-block; margin-top: 8px; padding: 4px 10px; background: rgba(233,69,96,0.3); border-radius: 20px; font-size: 0.8rem; color: #ff6b6b; }
+    .empty { color: #666; font-style: italic; text-align: center; padding: 20px; }
+    .footer { text-align: center; margin-top: 40px; color: #666; }
+    .footer a { color: #e94560; }
+    .quick-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .quick-links a { padding: 8px 16px; background: rgba(255,255,255,0.1); border-radius: 20px; color: #fff; text-decoration: none; font-size: 0.9rem; }
+    .quick-links a:hover { background: #e94560; }
+    @media (max-width: 600px) { h1 { font-size: 2rem; } .section { padding: 20px; } }
   </style>
 </head>
 <body>
@@ -169,7 +68,6 @@
     <h1>⚡ AI Daily Brief</h1>
     <p class="subtitle">每日AI深度简报 · 每周周报</p>
     
-    <!-- Quick Date Search -->
     <div class="section">
       <h2>🔍 日期检索</h2>
       <div class="date-picker">
@@ -177,24 +75,17 @@
         <button onclick="goToDate()">跳转</button>
       </div>
       <div class="quick-links">
-        <a href="daily/2026-02-14.html">2026-02-14</a>
         <!-- More dates will be added automatically -->
       </div>
     </div>
     
-    <!-- Daily Briefs -->
     <div class="section">
       <h2>📰 每日简报</h2>
       <div class="grid">
-        <a href="daily/2026-02-14.html" class="card">
-          <div class="date">2026-02-14</div>
-          <div class="weekday">周五</div>
-          <span class="tag">最新</span>
-        </a>
+        <!-- More cards will be added automatically -->
       </div>
     </div>
     
-    <!-- Weekly Reports -->
     <div class="section">
       <h2>📅 每周周报</h2>
       <p class="empty">暂无周报</p>
@@ -207,17 +98,11 @@
   </div>
   
   <script>
-    // Set max date to today
     document.getElementById('dateInput').max = new Date().toISOString().split('T')[0];
-    
     function goToDate() {
       const date = document.getElementById('dateInput').value;
-      if (date) {
-        window.location.href = 'daily/' + date + '.html';
-      }
+      if (date) window.location.href = 'daily/' + date + '.html';
     }
-    
-    // Enter key support
     document.getElementById('dateInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') goToDate();
     });
