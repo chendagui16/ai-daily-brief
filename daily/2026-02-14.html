@@ -37,50 +37,316 @@
     .trends-box { background: #f0f9ff; padding: 20px; border-radius: 12px; margin: 16px 0; border-left: 4px solid #0ea5e9; }
     .trends-box p { margin: 8px 0; color: #333; line-height: 1.8; }
     .news-title { font-size: 16px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
-    .date-badge { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 8px; font-weight: normal; }
+    .trend-hot { color: #e94560; font-weight: bold; }
+    .trend-watch { color: #f59e0b; font-weight: bold; }
+    .trend-turn { color: #8b5cf6; font-weight: bold; }
+    .summary-line { color: #333; font-size: 15px; margin: 8px 0; padding-left: 12px; border-left: 3px solid #e94560; }
+    .signal-line { color: #666; font-size: 14px; margin: 6px 0; }
     .paper-title { font-size: 15px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
+    .date-badge { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 8px; font-weight: normal; }
+    .trending-section { margin: 24px 0; }
+    .trending-card { background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 12px 0; }
+    .trending-card h3 { margin-top: 0; color: #16213e; display: flex; align-items: center; gap: 8px; }
+    .trending-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .trending-item { background: white; border-radius: 8px; padding: 12px; border: 1px solid #eee; }
+    .trending-item-title { font-weight: 600; color: #0f3460; font-size: 14px; }
+    .trending-item-title a { color: #0f3460; text-decoration: none; }
+    .trending-item-title a:hover { color: #e94560; }
+    .trending-item-meta { font-size: 12px; color: #666; margin-top: 6px; }
+    .trending-item-desc { font-size: 13px; color: #555; margin-top: 6px; line-height: 1.5; }
+    .trending-badge { display: inline-block; padding: 2px 8px; background: #e0f2fe; color: #0284c7; border-radius: 12px; font-size: 11px; margin-right: 6px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="nav">
-      <a href="../../">← 返回主页</a>
+      <a href="https://chendagui16.github.io/ai-daily-brief/">← 返回主页</a>
     </div>
     
-    <h1>📡 每日AI深度简报 <span class="badge new-tag">+45增量</span> <span class="badge llm-badge">🤖 LLM分析</span></h1>
+    <h1>📡 每日AI深度简报 <span class="badge new-tag">+57增量</span> <span class="badge llm-badge">🤖 LLM分析</span></h1>
     <p class="meta">2026-02-14 · 由闪电AI助手生成</p>
     
     <!-- 🤖 Core Trend -->
     <div class="analysis-box">
       <h3>🔥 今日核心观点</h3>
-      <p><strong>多模态大模型加速落地，端侧AI与具身智能成为新焦点。</strong></p>
+      <p><strong>今日核心观点:</strong> 2026年情人节次日，AI商业化进入“精算纪元”：模型能力趋同下，定价透明度与部署粒度成决胜关键  <br>【方向信号】Docker化轻量AI助手（如OpenClaw）爆发式涌现，标志边缘侧AI从概念验证迈入家庭级规模化部署前夜</p>
     </div>
     
     <!-- 🤖 News with detailed analysis -->
     <h2>📰 AI新闻深度解读</h2>
     
     <div class="news-analysis">
-      <div class="news-title">1. AI Agents Reach Tipping Point: 100% of Enterprises Plan to Expand Adoption in 2026 <span class="date-badge">2026-02-14</span></div>
-      <p>企业AI智能体 adoption 进入规模化临界点，2026年将全面铺开。  <br>技术成熟度与ROI验证推动决策层从试点转向战略级部署。  <br>人才缺口与系统集成复杂度仍是规模化落地的主要瓶颈。</p>
-      <p>🔗 <a href="https://www.businesswire.com/news/home/20260211693427/" target="_blank">阅读原文</a></p>
+      <div class="news-title">1. AI Image Pricing 2026: Google Gemini vs. OpenAI GPT Cost Analysis | IntuitionLabs <span class="date-badge">2026-02-14</span></div>
+      <div class="summary-line">📌 2026年AI图像生成定价将大幅下降  <br></div>
+      <div class="signal-line">🔥看好  <br></div>
+      <div class="signal-line">📡 Gemini与GPT图像API成本三年内预计降超70%，规模效应+架构优化驱动</div>
+      <p>🔗 <a href="https://intuitionlabs.ai/articles/ai-image-generation-pricing-google-openai" target="_blank">阅读原文</a></p>
     </div>
     
     <div class="news-analysis">
-      <div class="news-title">2. ByteDance Launches Seedance 2.0 with Quad-Modal Input - 20-Second 2K Video Generation <span class="date-badge">2026-02-14</span></div>
-      <p>字节推出Seedance 2.0，支持文本、图像、音频、动作四模态输入。  <br>单次生成20秒2K分辨率视频，显著提升生成质量与连贯性。  <br>此举强化其在AIGC视频赛道的实时性与多模态融合技术壁垒。</p>
-      <p>🔗 <a href="https://www.sitepoint.com/introducing-seedance-2-0/" target="_blank">阅读原文</a></p>
+      <div class="news-title">2. [Support] OpenClaw — AI Personal Assistant - Docker Containers - Unraid <span class="date-badge">2026-02-14</span></div>
+      <div class="summary-line">📌 OpenClaw AI助手发布Unraid Docker镜像  <br></div>
+      <div class="signal-line">👀观察  <br></div>
+      <div class="signal-line">📡 社区支持初启，无官方背书与成熟文档，生态尚处早期验证阶段</div>
+      <p>🔗 <a href="https://forums.unraid.net/topic/196865-support-openclaw-ai-personal-assistant/" target="_blank">阅读原文</a></p>
     </div>
     
     <div class="news-analysis">
-      <div class="news-title">3. OpenAI Launches Ads in ChatGPT - AI Trust Contract Breaks <span class="date-badge">2026-02-14</span></div>
-      <p>OpenAI在ChatGPT中插入广告，首次将用户对话数据用于商业变现。  <br>此举违背早期“不靠广告盈利”的AI信任契约承诺。  <br>免费用户成流量入口，模型训练与广告推荐形成数据闭环。</p>
-      <p>🔗 <a href="https://www.adweek.com/brand-marketing/10-ai-marketing-trends-for-2026-agentic-ai-and-search-shifts/" target="_blank">阅读原文</a></p>
+      <div class="news-title">3. AI API Pricing Comparison (2026): Grok vs Gemini vs GPT-4o vs Claude | IntuitionLabs <span class="date-badge">2026-02-14</span></div>
+      <div class="summary-line">📌 2026年主流AI API价格全面下调  <br></div>
+      <div class="signal-line">🔥看好  <br></div>
+      <div class="signal-line">📡 Grok-3/Gemini 2.5/ Claude 4均降价30%+，GPT-4o成本降45%，API商业化加速</div>
+      <p>🔗 <a href="https://intuitionlabs.ai/articles/ai-api-pricing-comparison-grok-gemini-openai-claude" target="_blank">阅读原文</a></p>
     </div>
     
     <div class="news-analysis">
-      <div class="news-title">4. Claude Code Projected to Contribute 20% of GitHub Commits by 2026 <span class="date-badge">2026-02-14</span></div>
-      <p>Claude Code有望在2026年贡献近两成GitHub提交量。  <br>这反映AI编程助手正深度融入主流开发流程。  <br>但人类审核与工程治理能力将面临更大挑战。</p>
-      <p>🔗 <a href="https://www.houdao.com/d/2057" target="_blank">阅读原文</a></p>
+      <div class="news-title">4. Programação é o novo painel de controle da IA: OpenAI e Anthropic deixaram isso claro com o GPT-5.3-Codex e o Claude Opus 4.6 <span class="date-badge">2026-02-14</span></div>
+      <div class="summary-line">📌 编程正成为AI核心控制接口  <br></div>
+      <div class="signal-line">🔥看好  <br></div>
+      <div class="signal-line">📡 OpenAI与Anthropic新模型聚焦代码理解与生成能力跃升</div>
+      <p>🔗 <a href="https://www.terra.com.br/byte/programacao-e-o-novo-painel-de-controle-da-ia-openai-e-anthropic-deixaram-isso-claro-com-o-gpt-53-codex-e-o-claude-opus-46,52f845919f5705f9d5c745e5d88ba2144q04ioom.html" target="_blank">阅读原文</a></p>
+    </div>
+    
+    <div class="news-analysis">
+      <div class="news-title">5. Claude, the ChatGPT rival shaking up AI and software: What it is and why it matters | Economy and Business | EL PAÍS English <span class="date-badge">2026-02-14</span></div>
+      <div class="summary-line">📌 Claude以强推理与长上下文冲击AI竞争格局  <br></div>
+      <div class="signal-line">🔥看好  <br></div>
+      <div class="signal-line">📡 100万token上下文+代码推理优势，企业级应用落地加速</div>
+      <p>🔗 <a href="https://english.elpais.com/economy-and-business/2026-02-14/claude-the-chatgpt-rival-shaking-up-ai-and-software-what-it-is-and-why-it-matters.html" target="_blank">阅读原文</a></p>
+    </div>
+    
+    
+    <!-- 🐙 GitHub Trending -->
+    
+    <div class="trending-section">
+    <div class="trending-card">
+      <h3>🐙 GitHub 热门项目 <span class="meta">(最近7天)</span></h3>
+      <div class="trending-grid">
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/FireRedTeam/FireRedASR2S" target="_blank">FireRedASR2S</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 208</span>
+            <span class="trending-badge">Python</span>
+            <span>by FireRedTeam</span>
+          </div>
+          <div class="trending-item-desc">FireRedASR2S is a SOTA Industrial-Grade All-in-One ASR system with ASR, VAD, LID...</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/AnkitNayak-eth/EpsteinFiles-RAG" target="_blank">EpsteinFiles-RAG</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 244</span>
+            <span class="trending-badge">Python</span>
+            <span>by AnkitNayak-eth</span>
+          </div>
+          <div class="trending-item-desc">A RAG pipeline implementation built on the 'Epstein Files 20K' dataset from Hugg...</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/vigorX777/ai-daily-digest" target="_blank">ai-daily-digest</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 527</span>
+            <span class="trending-badge">TypeScript</span>
+            <span>by vigorX777</span>
+          </div>
+          <div class="trending-item-desc">从 Andrej Karpathy 推荐的 90 顶级技术博客中抓取最新文章，AI 多维评分筛选，生成一份每日精选日报。更多可见公众号：懂点儿AI</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/aeromomo/claw-compactor" target="_blank">claw-compactor</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 485</span>
+            <span class="trending-badge">Python</span>
+            <span>by aeromomo</span>
+          </div>
+          <div class="trending-item-desc">🦞 Claw Compactor — The 98% Crusher. Cut your AI agent token spend in half with ...</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/zilliztech/memsearch" target="_blank">memsearch</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 410</span>
+            <span class="trending-badge">Python</span>
+            <span>by zilliztech</span>
+          </div>
+          <div class="trending-item-desc">A Markdown-first memory system, a standalone library for any AI agent. Inspired ...</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/MemeCalculate/moyin-creator" target="_blank">moyin-creator</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 355</span>
+            <span class="trending-badge">TypeScript</span>
+            <span>by MemeCalculate</span>
+          </div>
+          <div class="trending-item-desc">AI 影视生产级工具 | 支持 Seedance 2.0 | 剧本到成片全流程批量化 | AI-powered film production tool wit...</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/jlia0/tinyclaw" target="_blank">tinyclaw</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1541</span>
+            <span class="trending-badge">TypeScript</span>
+            <span>by jlia0</span>
+          </div>
+          <div class="trending-item-desc">TinyClaw is a team of personal agents that collaborate with each other</div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://github.com/xyzeva/k-id-age-verifier" target="_blank">k-id-age-verifier</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1513</span>
+            <span class="trending-badge">TypeScript</span>
+            <span>by xyzeva</span>
+          </div>
+          <div class="trending-item-desc">automatically verify your age on discord, twitch, kick, quora and more (k-id)</div>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    
+    
+    <!-- 🤗 HuggingFace -->
+    
+    <div class="trending-section">
+    <div class="trending-card">
+      <h3>🤗 HuggingFace 热门模型 <span class="meta">(最近7天)</span></h3>
+      <div class="trending-grid">
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct" target="_blank">Llama-3.1-8B-Instruct</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 5,633,386</span>
+            <span class="trending-badge">👍 5454</span>
+            <span>text-generation</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/openai/gpt-oss-20b" target="_blank">gpt-oss-20b</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 5,486,839</span>
+            <span class="trending-badge">👍 4359</span>
+            <span>text-generation</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/openai-community/gpt2" target="_blank">gpt2</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 7,605,873</span>
+            <span class="trending-badge">👍 3113</span>
+            <span>text-generation</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/openai/clip-vit-large-patch14" target="_blank">clip-vit-large-patch14</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 7,669,906</span>
+            <span class="trending-badge">👍 1962</span>
+            <span>zero-shot-image-classification</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct" target="_blank">Qwen2.5-7B-Instruct</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 12,142,981</span>
+            <span class="trending-badge">👍 1071</span>
+            <span>text-generation</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/Qwen/Qwen3-0.6B" target="_blank">Qwen3-0.6B</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 10,034,367</span>
+            <span class="trending-badge">👍 1071</span>
+            <span>text-generation</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="trending-card">
+      <h3>📊 热门数据集</h3>
+      <div class="trending-grid">
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/datasets/huggingface/documentation-images" target="_blank">documentation-images</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 1,881,867</span>
+            <span class="trending-badge">👍 106</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/datasets/KakologArchives/KakologArchives" target="_blank">KakologArchives</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 1,495,254</span>
+            <span class="trending-badge">👍 21</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/datasets/hf-doc-build/doc-build" target="_blank">doc-build</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 1,265,764</span>
+            <span class="trending-badge">👍 19</span>
+          </div>
+        </div>
+        
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/datasets/Jsinowitz/snodas-snowmelt-cache" target="_blank">snodas-snowmelt-cache</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 263,251</span>
+            <span class="trending-badge">👍 0</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
     </div>
     
     
@@ -88,37 +354,43 @@
     <h2>📄 热门论文解析</h2>
     <div class="trends-box">
       <h3>📊 研究趋势分析</h3>
-      <p>当前AI研究聚焦于大模型轻量化与高效推理，推动端侧部署和实时应用落地。  <br>多模态融合、具身智能与AI自主进化成为突破方向，强调跨模态理解与环境交互能力。</p>
+      <p>🔥 多模态思维链测试时缩放与物理引导的方程发现  <br>💡 融合物理先验的LLM智能体+扩散模型轨迹自蒸馏优化</p>
     </div>
     
     
     <div class="paper-analysis">
-      <div class="paper-title">1. CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use <span class="date-badge">2026-02-12</span></div>
+      <div class="paper-title">1. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling <span class="date-badge">2026-02-12</span></div>
       <div class="stats">
-        <span class="stat">📚 引用: <strong>130</strong></span>
-        <span class="stat">👥 作者: <strong>Zhen Zhang</strong></span>
+        <span class="stat">📚 引用: <strong>114</strong></span>
+        <span class="stat">👥 作者: <strong>Leon Liangyu Chen</strong></span>
       </div>
-      <p>该文提出CM2框架，首创“清单式奖励”机制指导多步工具调用。  <br>通过结构化检查清单量化每步完成度，显著提升长程任务成功率。  <br>在复杂多轮工具交互场景中，相较基线模型准确率提升18.7%。  <br>为大模型智能体的可控性与可解释性提供了新范式。</p>
+      <div class="summary-line">📌 提出统一多模态思维链测试时缩放框架  <br></div>
+      <div class="signal-line">🔥突破  <br></div>
+      <div class="signal-line">💎 解决多模态CoT泛化性差与测试时动态缩放缺失问题</div>
       
     </div>
     
     <div class="paper-analysis">
-      <div class="paper-title">2. UniT: Unified Multimodal Chain-of-Thought Test-time Scaling <span class="date-badge">2026-02-12</span></div>
+      <div class="paper-title">2. T3D: Few-Step Diffusion Language Models via Trajectory Self-Distillation with Direct Discriminative Optimization <span class="date-badge">2026-02-12</span></div>
       <div class="stats">
-        <span class="stat">📚 引用: <strong>70</strong></span>
-        <span class="stat">👥 作者: <strong>Leon Liangyu Chen</strong></span>
+        <span class="stat">📚 引用: <strong>102</strong></span>
+        <span class="stat">👥 作者: <strong>Tunyu Zhang</strong></span>
       </div>
-      <p>UniT首创统一多模态思维链测试时缩放机制，突破单模态限制。  <br>它动态融合视觉、语言与推理路径，提升跨任务泛化能力。  <br>在零样本多模态推理中显著优于现有方法，降低部署成本。  <br>为AI系统提供轻量、可扩展的实时推理增强新范式。</p>
+      <div class="summary-line">📌 提出轨迹自蒸馏与直接判别优化，实现少步扩散语言建模  <br></div>
+      <div class="signal-line">🔥突破  <br></div>
+      <div class="signal-line">💎 解决扩散语言模型采样步数多、质量低的双重瓶颈，开辟高效生成新范式</div>
       
     </div>
     
     <div class="paper-analysis">
       <div class="paper-title">3. Think like a Scientist: Physics-guided LLM Agent for Equation Discovery <span class="date-badge">2026-02-12</span></div>
       <div class="stats">
-        <span class="stat">📚 引用: <strong>33</strong></span>
+        <span class="stat">📚 引用: <strong>55</strong></span>
         <span class="stat">👥 作者: <strong>Jianke Yang</strong></span>
       </div>
-      <p>该文首创物理规律约束的LLM智能体框架，将守恒律与量纲分析嵌入推理过程。  <br>显著提升复杂系统方程发现的准确性与可解释性，避免纯数据驱动的过拟合。  <br>在流体力学与电路建模等任务中验证了其泛化能力与物理一致性。  <br>为科学发现提供了可验证、可追溯的AI新范式。</p>
+      <div class="summary-line">📌 物理规律引导的LLM方程发现代理  <br></div>
+      <div class="signal-line">🔥突破  <br></div>
+      <div class="signal-line">💎 解决数据驱动方程发现中可解释性与物理一致性缺失难题</div>
       
     </div>
     
@@ -127,10 +399,10 @@
     <h2>💡 方向性判断</h2>
     <table>
       <tr><th>方向</th><th>判断</th><th>关键信号</th></tr>
-      <tr><td>🤖 Agent</td><td>别被骗了</td><td>100%说要→11%做到</td></tr>
-      <tr><td>🧠 LLM</td><td>代际更替</td><td>4%→20%代码</td></tr>
-      <tr><td>🎬 视频</td><td>战国时代</td><td>多强竞争</td></tr>
-      <tr><td>📺 广告</td><td>搜索已死</td><td>AI答案时代</td></tr>
+      <tr><td>🤖 Agent</td><td>Agent商业化加速</td><td>OpenClaw Docker容器部署</td></tr>
+      <tr><td>🧠 LLM</td><td>模型能力趋同化</td><td>GPT-5.3-Codex与Claude Opus 4.6并列编程接口</td></tr>
+      <tr><td>🎬 视频</td><td>未显性爆发</td><td>新闻中无视频相关条目</td></tr>
+      <tr><td>📺 广告</td><td>API定价白热化</td><td>四家主流模型API价格横向对比</td></tr>
     </table>
     
     <div class="footer">
