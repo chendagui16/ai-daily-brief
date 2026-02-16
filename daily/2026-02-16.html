@@ -44,6 +44,19 @@
     .signal-line { color: #666; font-size: 14px; margin: 6px 0; }
     .paper-title { font-size: 15px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
     .date-badge { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 8px; font-weight: normal; }
+    .trending-section { margin: 24px 0; }
+    .trending-card { background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 12px 0; }
+    .trending-card h3 { margin-top: 0; color: #16213e; display: flex; align-items: center; gap: 8px; }
+    .trending-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .trending-item { background: white; border-radius: 8px; padding: 12px; border: 1px solid #eee; }
+    .trending-item-title { font-weight: 600; color: #0f3460; font-size: 14px; }
+    .trending-item-title a { color: #0f3460; text-decoration: none; }
+    .trending-item-title a:hover { color: #e94560; }
+    .trending-item-meta { font-size: 12px; color: #666; margin-top: 6px; }
+    .trending-item-desc { font-size: 13px; color: #555; margin-top: 6px; line-height: 1.5; }
+    .trending-badge { display: inline-block; padding: 2px 8px; background: #e0f2fe; color: #0284c7; border-radius: 12px; font-size: 11px; margin-right: 6px; }
+    .chinese-analysis { background: #fff3cd; padding: 12px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #ffc107; }
+    .chinese-analysis strong { color: #856404; }
   </style>
 </head>
 <body>
@@ -58,63 +71,209 @@
     <!-- Core Trend -->
     <div class="analysis-box">
       <h3>🔥 今日核心观点</h3>
-      <p><strong>今日核心观点:</strong> AI领域持续快速发展，自主代理(Agent)技术成为焦点。</p>
+      <p><strong>今日核心观点:</strong> AI代理(Agent)技术持续升温，成为2026年最受关注方向。</p>
     </div>
     
-    <!-- News -->
-    <h2>📰 AI新闻</h2>
+    <!-- News with Chinese Analysis -->
+    <h2>📰 AI新闻深度解读</h2>
     <div class="news-analysis">
       <div class="news-title">1. What Is AI Agent For Advertising: Complete Guide 2026 | AdStellar <span class="date-badge">2026-02-15</span></div>
       <div class="summary-line">📌 AI agents operate on an entirely different level. They&#x27;re <strong>autonomous software entities designed around three core capabilities: perception, reasoning, and action</strong>.</div>
       <div class="signal-line">🏷️ Agent, AI Agent, autonomous, ad, advertising</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://www.adstellar.ai/blog/what-is-ai-agent-for-advertising" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
       <div class="news-title">2. An AI Agent Published a Hit Piece on Me – The Shamblog <span class="date-badge">2026-02-15</span></div>
-      <div class="summary-line">📌 It’s important to understand that more than likely there was no human telling the AI to do this. Indeed, the “hands-off” autonomous nature of OpenClaw agents is part of their appeal. People are settin...</div>
+      <div class="summary-line">📌 It’s important to understand that more than likely there was no human telling the AI to do this. Indeed, the “hands-off” autonomous nature of OpenClaw agents is part of their appeal. People are settin</div>
       <div class="signal-line">🏷️ Agent, AI Agent, autonomous</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://theshamblog.com/an-ai-agent-published-a-hit-piece-on-me/" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
       <div class="news-title">3. Artificial intelligence - Wikipedia <span class="date-badge">2026-02-15</span></div>
-      <div class="summary-line">📌 AI agents are <strong>software entities designed to perceive their environment, make decisions, and take actions autonomously to achieve specific goals</strong>. These agents can interact with users, ...</div>
+      <div class="summary-line">📌 AI agents are <strong>software entities designed to perceive their environment, make decisions, and take actions autonomously to achieve specific goals</strong>. These agents can interact with users, </div>
       <div class="signal-line">🏷️ Agent, AI Agent, autonomous</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
-      <div class="news-title">4. UC Berkeley unveils framework as AI agents threaten to outrun oversight <span class="date-badge">2026-02-15</span></div>
-      <div class="summary-line">📌 According to the 67-page document ... These autonomous systems <strong>can make independent decisions, generate or pursue sub-goals, re-plan within environments, and delegate tasks to other models or ...</div>
+      <div class="news-title">4. Agent SDK <span class="date-badge">2026-02-14</span></div>
+      <div class="summary-line">📌 The ChatBotKit Agent SDK provides a powerful framework for building autonomous AI agents that can execute complex tasks using custom tools while leveraging the full capabilities of the ChatBotKit plat</div>
       <div class="signal-line">🏷️ Agent, AI Agent, autonomous</div>
-      <p>🔗 <a href="https://ppc.land/uc-berkeley-unveils-framework-as-ai-agents-threaten-to-outrun-oversight/" target="_blank">阅读原文</a></p>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
+      <p>🔗 <a href="https://chatbotkit.com/manuals/agent-sdk" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
-      <div class="news-title">5. Agent SDK <span class="date-badge">2026-02-14</span></div>
-      <div class="summary-line">📌 The ChatBotKit Agent SDK provides a powerful framework for building autonomous AI agents that can execute complex tasks using custom tools while leveraging the full capabilities of the ChatBotKit plat...</div>
+      <div class="news-title">5. UC Berkeley unveils framework as AI agents threaten to outrun oversight <span class="date-badge">2026-02-15</span></div>
+      <div class="summary-line">📌 According to the 67-page document ... These autonomous systems <strong>can make independent decisions, generate or pursue sub-goals, re-plan within environments, and delegate tasks to other models or </div>
       <div class="signal-line">🏷️ Agent, AI Agent, autonomous</div>
-      <p>🔗 <a href="https://chatbotkit.com/manuals/agent-sdk" target="_blank">阅读原文</a></p>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
+      <p>🔗 <a href="https://ppc.land/uc-berkeley-unveils-framework-as-ai-agents-threaten-to-outrun-oversight/" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
       <div class="news-title">6. Developer targeted by AI hit piece warns society cannot handle AI agents that decouple actions from consequences <span class="date-badge">2026-02-15</span></div>
       <div class="summary-line">📌 The autonomous AI agent &quot;<strong>MJ Rathbun</strong>,&quot; which published a defamatory article about Matplotlib maintainer Scott Shambaugh, remains active on GitHub.</div>
       <div class="signal-line">🏷️ Agent, AI Agent, autonomous</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://the-decoder.com/developer-targeted-by-ai-hit-piece-warns-society-cannot-handle-ai-agents-that-decouple-actions-from-consequences/" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
       <div class="news-title">7. The Agent Economy Stack: ERC-8004, X402, Base and AI Crypto Infrastructure <span class="date-badge">2026-02-14</span></div>
-      <div class="summary-line">📌 Instead of relying on subscription models designed for humans, <strong>agents can pay per query, per signal or per decision input</strong>. This introduces a new economic model where intelligence beco...</div>
+      <div class="summary-line">📌 Instead of relying on subscription models designed for humans, <strong>agents can pay per query, per signal or per decision input</strong>. This introduces a new economic model where intelligence beco</div>
       <div class="signal-line">🏷️ Agent, ad</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://cryptoticker.io/en/agent-economy-stack-erc-8004-x402-base-ai-crypto-infrastructure/" target="_blank">阅读原文</a></p>
     </div>
     <div class="news-analysis">
-      <div class="news-title">8. OpenAI grabs OpenClaw creator Peter Steinberger to build personal agents - Tech Edu Byte <span class="date-badge">2026-02-15</span></div>
-      <div class="summary-line">📌 These agents could: – Monitor your schedule and suggest optimizations – Handle routine tasks like email management and appointment scheduling – Learn your preferences and work patterns over time – Int...</div>
-      <div class="signal-line">🏷️ Agent, autonomous</div>
-      <p>🔗 <a href="https://www.techedubyte.com/openai-peter-steinberger-openclaw-personal-agents/" target="_blank">阅读原文</a></p>
+      <div class="news-title">8. OpenAI Backs OpenClaw, Betting On Open-Source Personal Agents - Finimize <span class="date-badge">2026-02-15</span></div>
+      <div class="summary-line">📌 Investor attention is moving from AI models to agents that can complete tasks inside real workflows. OpenClaw’s developer traction is a signal of potential downstream spending on hosting, security, an</div>
+      <div class="signal-line">🏷️ Agent</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
+      <p>🔗 <a href="https://finimize.com/content/openai-backs-openclaw-betting-on-open-source-personal-agents" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="trending-section">
+    <div class="trending-card">
+      <h3>🐙 GitHub 热门项目 <span class="meta">(最近7天)</span></h3>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/mbeijen/andrej-karpathy-skills-cursor-vscode" target="_blank">andrej-karpathy-skills-cursor-vscode</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 136</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="trending-item-desc">Andrej Karpathy skills for your Cursor or VS Code editor</div>
+          <div class="chinese-analysis" style="margin-top:8px;"><strong>💡 分析:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/vigorX777/ai-daily-digest" target="_blank">ai-daily-digest</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 648</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="trending-item-desc">从 Andrej Karpathy 推荐的 90 顶级技术博客中抓取最新文章，AI 多维评分筛选，生成一份每日精选日报。更多可见公众号：懂点儿AI</div>
+          <div class="chinese-analysis" style="margin-top:8px;"><strong>💡 分析:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/xyzeva/k-id-age-verifier" target="_blank">k-id-age-verifier</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1543</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="trending-item-desc">automatically verify your age on discord, twitch, kick, quora and more (k-id)</div>
+          <div class="chinese-analysis" style="margin-top:8px;"><strong>💡 分析:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/SamuelQZQ/auto-coding-agent-demo" target="_blank">auto-coding-agent-demo</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 194</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="trending-item-desc">一个长达 10 小时的 AI 全自动编程实验</div>
+          <div class="chinese-analysis" style="margin-top:8px;"><strong>💡 分析:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/freestylefly/openclaw-wechat" target="_blank">openclaw-wechat</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 533</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="trending-item-desc">让 OpenClaw稳定的连上你的个人微信</div>
+          <div class="chinese-analysis" style="margin-top:8px;"><strong>💡 分析:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/HKUDS/MoChat" target="_blank">MoChat</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 140</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="trending-item-desc">"MoChat: Reconnecting the World through AI Agents (OpenClaw & nanobot & ClaudeCode) https://mochat.i</div>
+          <div class="chinese-analysis" style="margin-top:8px;"><strong>💡 分析:</strong> 暂无分析</div>
+        </div>
+    </div>
+    </div>
+    <div class="trending-section">
+    <div class="trending-card">
+      <h3>🤗 HuggingFace 热门模型 <span class="meta">(最近7天)</span></h3>
+      <div class="trending-grid">
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct" target="_blank">meta-llama/Llama-3.1-8B-Instruct</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 5,633,386</span>
+            <span class="trending-badge">👍 5454</span>
+          </div>
+          <div class="chinese-analysis" style="margin-top:8px;font-size:12px;"><strong>💡:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/openai/gpt-oss-20b" target="_blank">openai/gpt-oss-20b</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 5,486,839</span>
+            <span class="trending-badge">👍 4361</span>
+          </div>
+          <div class="chinese-analysis" style="margin-top:8px;font-size:12px;"><strong>💡:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/openai-community/gpt2" target="_blank">openai-community/gpt2</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 7,605,873</span>
+            <span class="trending-badge">👍 3113</span>
+          </div>
+          <div class="chinese-analysis" style="margin-top:8px;font-size:12px;"><strong>💡:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/openai/clip-vit-large-patch14" target="_blank">openai/clip-vit-large-patch14</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 7,669,906</span>
+            <span class="trending-badge">👍 1962</span>
+          </div>
+          <div class="chinese-analysis" style="margin-top:8px;font-size:12px;"><strong>💡:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/Qwen/Qwen3-0.6B" target="_blank">Qwen/Qwen3-0.6B</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 10,034,367</span>
+            <span class="trending-badge">👍 1075</span>
+          </div>
+          <div class="chinese-analysis" style="margin-top:8px;font-size:12px;"><strong>💡:</strong> 暂无分析</div>
+        </div>
+        <div class="trending-item">
+          <div class="trending-item-title">
+            <a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct" target="_blank">Qwen/Qwen2.5-7B-Instruct</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⬇️ 12,142,981</span>
+            <span class="trending-badge">👍 1072</span>
+          </div>
+          <div class="chinese-analysis" style="margin-top:8px;font-size:12px;"><strong>💡:</strong> 暂无分析</div>
+        </div>
+      </div>
+    </div>
     </div>
     <!-- Papers -->
-    <h2>📄 热门论文</h2>
+    <h2>📄 热门论文解析</h2>
     <div class="trends-box">
-      <h3>📊 研究趋势</h3>
+      <h3>📊 研究趋势分析</h3>
       <p>🔥 AI代理与多模态学习持续火热</p>
     </div>
     <div class="paper-analysis">
@@ -123,7 +282,7 @@
         <span class="stat">📚 引用: <strong>0</strong></span>
         <span class="stat">👥 作者: <strong><name>Yiran Gao</name></strong></span>
       </div>
-      <div class="summary-line">📌 arXiv: 2602.13156</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://arxiv.org/abs/2602.13156" target="_blank">阅读论文</a></p>
     </div>
     <div class="paper-analysis">
@@ -132,7 +291,7 @@
         <span class="stat">📚 引用: <strong>0</strong></span>
         <span class="stat">👥 作者: <strong><name>Jiankun Zhang</name></strong></span>
       </div>
-      <div class="summary-line">📌 arXiv: 2602.13179</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://arxiv.org/abs/2602.13179" target="_blank">阅读论文</a></p>
     </div>
     <div class="paper-analysis">
@@ -141,7 +300,7 @@
         <span class="stat">📚 引用: <strong>0</strong></span>
         <span class="stat">👥 作者: <strong><name>Asmit Kumar Singh</name></strong></span>
       </div>
-      <div class="summary-line">📌 arXiv: 2602.13165</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://arxiv.org/abs/2602.13165" target="_blank">阅读论文</a></p>
     </div>
     <div class="paper-analysis">
@@ -150,7 +309,7 @@
         <span class="stat">📚 引用: <strong>0</strong></span>
         <span class="stat">👥 作者: <strong><name>Eduardo C. Garrido-Merchán</name></strong></span>
       </div>
-      <div class="summary-line">📌 arXiv: 2602.13154</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://arxiv.org/abs/2602.13154" target="_blank">阅读论文</a></p>
     </div>
     <div class="paper-analysis">
@@ -159,7 +318,7 @@
         <span class="stat">📚 引用: <strong>0</strong></span>
         <span class="stat">👥 作者: <strong><name>João Vitor Boer Abitante</name></strong></span>
       </div>
-      <div class="summary-line">📌 arXiv: 2602.13151</div>
+      <div class="chinese-analysis"><strong>💡 分析:</strong> 暂无分析</div>
       <p>🔗 <a href="https://arxiv.org/abs/2602.13151" target="_blank">阅读论文</a></p>
     </div>
     <!-- Direction -->
