@@ -60,6 +60,7 @@
     .quick-links { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
     .quick-links a { padding: 8px 16px; background: rgba(255,255,255,0.1); border-radius: 20px; color: #fff; text-decoration: none; font-size: 0.9rem; }
     .quick-links a:hover { background: #e94560; }
+    .loading { color: #888; text-align: center; padding: 20px; }
     @media (max-width: 600px) { h1 { font-size: 2rem; } .section { padding: 20px; } }
   </style>
 </head>
@@ -67,68 +68,36 @@
   <div class="container">
     <h1>⚡ AI Daily Brief</h1>
     <p class="subtitle">每日AI深度简报 · 每周周报</p>
-    
+
     <div class="section">
       <h2>🔍 日期检索</h2>
       <div class="date-picker">
         <input type="date" id="dateInput" max="">
         <button onclick="goToDate()">跳转</button>
       </div>
-      <div class="quick-links">
-        <a href="daily/2026-02-18.html">2026-02-18</a>
-        <a href="daily/2026-02-17.html">2026-02-17</a>
-        <a href="daily/2026-02-16.html">2026-02-16</a>
-        <a href="daily/2026-02-15.html">2026-02-15</a>
-        <a href="daily/2026-02-14.html">2026-02-14</a>
+      <div class="quick-links" id="quickLinks">
+        <span class="loading">加载中...</span>
       </div>
     </div>
-    
+
     <div class="section">
       <h2>📰 每日简报</h2>
-      <div class="grid">
-        <a href="daily/2026-02-18.html" class="card">
-          <div class="date">2026-02-18</div>
-          <div class="weekday">周三</div>
-        </a>
-
-        <a href="daily/2026-02-17.html" class="card">
-          <div class="date">2026-02-17</div>
-          <div class="weekday">周二</div>
-        </a>
-
-        <a href="daily/2026-02-16.html" class="card">
-          <div class="date">2026-02-16</div>
-          <div class="weekday">周一</div>
-        </a>
-
-        <a href="daily/2026-02-15.html" class="card">
-          <div class="date">2026-02-15</div>
-          <div class="weekday">周日</div>
-        </a>
-
-        <a href="daily/2026-02-14.html" class="card">
-          <div class="date">2026-02-14</div>
-          <div class="weekday">周六</div>
-        </a>
-
-        <a href="daily/2026-02-13.html" class="card">
-          <div class="date">2026-02-13</div>
-          <div class="weekday">周五</div>
-        </a>
+      <div class="grid" id="dailyGrid">
+        <span class="loading">加载中...</span>
       </div>
     </div>
-    
+
     <div class="section">
       <h2>📅 每周周报</h2>
       <p class="empty">暂无周报</p>
     </div>
-    
+
     <div class="footer">
       <p>Powered by ⚡ 闪电 · 自动每日更新</p>
       <p><a href="https://github.com/chendagui16/ai-daily-brief" target="_blank">GitHub</a></p>
     </div>
   </div>
-  
+
   <script>
     document.getElementById('dateInput').max = new Date().toISOString().split('T')[0];
     function goToDate() {
@@ -138,6 +107,43 @@
     document.getElementById('dateInput').addEventListener('keypress', function(e) {
       if (e.key === 'Enter') goToDate();
     });
+
+    // Dynamic load dates from dates.json
+    async function loadDates() {
+      try {
+        const response = await fetch('dates.json');
+        if (!response.ok) throw new Error('Failed to load dates.json');
+        const dates = await response.json();
+
+        if (!dates || dates.length === 0) {
+          document.getElementById('quickLinks').innerHTML = '<span class="empty">暂无日期</span>';
+          document.getElementById('dailyGrid').innerHTML = '<span class="empty">暂无日期</span>';
+          return;
+        }
+
+        // Generate quick links (top 5)
+        const quickLinksHtml = dates.slice(0, 5).map(d =>
+          `<a href="daily/${d.date}.html">${d.date}</a>`
+        ).join('');
+        document.getElementById('quickLinks').innerHTML = quickLinksHtml;
+
+        // Generate daily grid cards
+        const cardsHtml = dates.map(d =>
+          `<a href="daily/${d.date}.html" class="card">
+            <div class="date">${d.date}</div>
+            <div class="weekday">${d.weekday}</div>
+          </a>`
+        ).join('');
+        document.getElementById('dailyGrid').innerHTML = cardsHtml;
+
+      } catch (error) {
+        console.error('Error loading dates:', error);
+        document.getElementById('quickLinks').innerHTML = '<span class="empty">加载失败</span>';
+        document.getElementById('dailyGrid').innerHTML = '<span class="empty">加载失败</span>';
+      }
+    }
+
+    loadDates();
   </script>
 </body>
 </html>
