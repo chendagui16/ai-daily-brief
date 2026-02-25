@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI深度简报 - 2026-02-25</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; color: #333; }
+    .container { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 12px; font-size: 28px; }
+    h2 { color: #16213e; margin-top: 36px; font-size: 22px; }
+    h3 { color: #0f3460; font-size: 18px; margin-top: 24px; }
+    .meta { color: #666; font-size: 14px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 4px 12px; background: #e94560; color: white; border-radius: 20px; font-size: 12px; margin-left: 10px; }
+    .llm-badge { background: #7c3aed; }
+    .card { background: #f8f9fa; border-left: 4px solid #e94560; padding: 16px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .analysis-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 24px; border-radius: 12px; margin: 24px 0; }
+    .analysis-box h3 { color: white; margin-top: 0; }
+    .analysis-box p { margin: 10px 0; line-height: 1.8; }
+    .news-analysis, .paper-analysis { background: #fafafa; padding: 20px; border-radius: 12px; margin: 16px 0; border: 1px solid #eee; }
+    .news-analysis h3, .paper-analysis h3 { margin-top: 0; color: #1a1a2e; }
+    .news-analysis p, .paper-analysis p { margin: 8px 0; color: #444; line-height: 1.9; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #e94560; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    .tag { display: inline-block; background: #e94560; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px; margin-right: 8px; }
+    .stats { display: flex; gap: 16px; margin: 12px 0; flex-wrap: wrap; }
+    .stat { background: #f0f0f0; padding: 8px 16px; border-radius: 8px; font-size: 14px; }
+    .stat strong { color: #e94560; }
+    a { color: #e94560; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .divider { border-top: 1px dashed #ddd; margin: 32px 0; }
+    .footer { text-align: center; color: #999; margin-top: 40px; font-size: 14px; }
+    .nav { text-align: center; margin-bottom: 20px; }
+    .nav a { margin: 0 10px; color: #666; }
+    .trends-box { background: #f0f9ff; padding: 20px; border-radius: 12px; margin: 16px 0; border-left: 4px solid #0ea5e9; }
+    .trends-box p { margin: 8px 0; color: #333; line-height: 1.8; }
+    .news-title { font-size: 16px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
+    .trend-hot { color: #e94560; font-weight: bold; }
+    .trend-watch { color: #f59e0b; font-weight: bold; }
+    .trend-turn { color: #8b5cf6; font-weight: bold; }
+    .summary-line { color: #333; font-size: 15px; margin: 8px 0; padding-left: 12px; border-left: 3px solid #e94560; }
+    .signal-line { color: #666; font-size: 14px; margin: 6px 0; }
+    .paper-title { font-size: 15px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
+    .date-badge { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 8px; font-weight: normal; }
+    .trending-section { margin: 24px 0; }
+    .trending-card { background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 12px 0; }
+    .trending-card h3 { margin-top: 0; color: #16213e; display: flex; align-items: center; gap: 8px; }
+    .trending-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .trending-item { background: white; border-radius: 8px; padding: 12px; border: 1px solid #eee; }
+    .trending-item-title { font-weight: 600; color: #0f3460; font-size: 14px; }
+    .trending-item-title a { color: #0f3460; text-decoration: none; }
+    .trending-item-title a:hover { color: #e94560; }
+    .trending-item-meta { font-size: 12px; color: #666; margin-top: 6px; }
+    .trending-item-desc { font-size: 13px; color: #555; margin-top: 6px; line-height: 1.5; }
+    .trending-badge { display: inline-block; padding: 2px 8px; background: #e0f2fe; color: #0284c7; border-radius: 12px; font-size: 11px; margin-right: 6px; }
+    .chinese-analysis { background: #fff3cd; padding: 12px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #ffc107; }
+    .chinese-analysis strong { color: #856404; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="https://chendagui16.github.io/ai-daily-brief/">← 返回主页</a>
+    </div>
+    
+    <h1>📡 每日AI深度简报 <span class="badge new-tag">+10增量</span><span class="badge llm-badge">🤖 LLM分析</span></h1>
+    <p class="meta">2026-02-25 · 由闪电AI助手生成</p>
+    
+    <!-- Core Trend -->
+    <div class="analysis-box">
+      <h3>🔥 今日核心观点</h3>
+      <p><strong>今日核心观点:</strong> 扩散模型进入高效时代，Google Gemini Diffusion实现快速生成突破，同时开源模型生态持续壮大，AI推理与智能体能力成为新竞争焦点。</p>
+    </div>
+    
+    <!-- News with Chinese Summary -->
+    <h2>📰 AI新闻摘要</h2>
+    <div class="news-analysis">
+      <div class="news-title">1. hi just here to ask how do stable diffusion models work compared to ... <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">ChatGPT和Gemini等大语言模型在用户请求图像时会调用其专属的Diffusion模型进行生成。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://www.reddit.com/r/StableDiffusion/comments/1oj3e70/hi_just_here_to_ask_how_do_stable_diffusion/" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">2. Gemini Diffusion - Google DeepMind <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Google DeepMind发布了Gemini Diffusion等下一代AI系统，支持生成和探索交互式世界。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://deepmind.google/models/gemini-diffusion/" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">3. Gemini Diffusion Is CRAZY Fast—But Not What You Think - YouTube <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">YouTube视频称Gemini Diffusion的生成速度极快，但实际情况与预期不同。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://www.youtube.com/watch?v=WsYVE8xN-do" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">4. Gemini Diffusion Just Blew My Mind! | by Ishaan Gupta - Towards AI <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Gemini Diffusion类似Stable Diffusion，通过从噪声逐步精炼来生成文本内容。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://pub.towardsai.net/gemini-diffusion-just-blew-my-mind-5e7410e8be4b" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">5. CompVis/stable-diffusion: A latent text-to-image diffusion model <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Stable Diffusion是一个潜在的文本到图像扩散模型，用于高分辨率图像合成。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://github.com/CompVis/stable-diffusion" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">6. What is Stable Diffusion? - Generative AI - AWS <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Stable Diffusion是一种生成式AI模型，可根据文字和图像提示生成逼真的图片。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://aws.amazon.com/what-is/stable-diffusion/" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">7. Stable Diffusion - Wikipedia <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Wikipedia页面主要涉及Stability AI及其与Getty Images之间的法律诉讼相关内容。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://en.wikipedia.org/wiki/Stable_Diffusion" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">8. Model versions and lifecycle | Generative AI on Vertex AI <span class="date-badge">2026-02-25</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该文档定义了Google Cloud Vertex AI上Gemini和embedding模型的生命周期阶段及重要日期。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="trending-section">
+    <div class="trending-card">
+      <h3>🐙 GitHub 热门项目 <span class="meta">(最近7天)</span></h3>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/quoroom-ai/room" target="_blank">room</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 385</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">一个开源研究项目，旨在公开观察和学习自主AI代理如何赚取金钱的现象。</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/Kirubel125/Kalshi-Claw" target="_blank">Kalshi-Claw</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 568</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">基于Kalshi预测市场平台的TypeScript工具库，提供交易和自动化功能。</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/ochyai/vibe-local" target="_blank">vibe-local</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 408</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">免费本地AI编程环境，集成了Ollama大语言模型和Python开发工具。</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/ShinMegamiBoson/OpenPlanter" target="_blank">OpenPlanter</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1292</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">开源自动化种植系统，用于监控和控制植物生长的Python项目。</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/Chrissotino/swiss-ai-call-agent" target="_blank">swiss-ai-call-agent</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 281</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">面向瑞士市场的企业级AI电话代理，支持德语/法语/意大利语多语言通话，具备实时仪表盘和Claude决策引擎。</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/botiverse/agent-vault" target="_blank">agent-vault</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 277</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">TypeScript开发的安全库，用于在AI代理运行环境中加密存储和管理敏感凭证。</p>
+          </div>
+        </div>
+    </div>
+    </div>
+    <h2>📡 技术博客精选</h2>
+    <div class="news-analysis">
+      <div class="news-title">1. Linear walkthroughs <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">这篇文章介绍了如何利用编码代理为代码库提供结构化演练，帮助开发者快速熟悉现有代码、回顾自己遗忘的代码细节，或理解通过vibe coding生成的代码实现原理。通过结合前沿模型和合适的代理框架，可以实现高效的代码理解与学习。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/guides/agentic-engineering-patterns/linear-walkthroughs/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">2. go-size-analyzer <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">go-size-analyzer是一款Go语言生态的分析工具，可可视化展示Go二进制文件及其依赖包的大小分布。该工具支持本地安装使用，也可通过WebAssembly版本在网页上直接分析编译好的Go二进制文件。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/2026/Feb/24/go-size-analyzer/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">3. First run the tests <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">在编写代码代理时，自动化测试已变得不可或缺。过去不写测试的借口——如耗时且在代码快速迭代时需要不断重写——已不再成立，因为代理只需几分钟就能完成测试。测试对于确保AI生成的代码质量也至关重要。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">4. Ladybird adopts Rust, with help from AI <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Ladybird项目在Andreas Kling的领导下，成功将AI辅助编码应用于关键代码的移植工作中。经过数年对Swift在苹果生态外发展的期待，最终选择Rust作为内存安全语言，并从AI辅助移植关键库开始这一转型。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/2026/Feb/23/ladybird-adopts-rust/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">5. Writing about Agentic Engineering Patterns <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">作者启动了一个新项目，旨在收集和记录Agentic Engineering Patterns（代理工程模式），即帮助开发者在当今编程代理时代获得最佳结果的编码实践和模式。该项目聚焦于使用Claude Code和OpenAI Codex等工具构建软件的方法。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <!-- arXiv Papers -->
+    <h2>📄 arXiv 热门论文 <span class="meta">(最近7天)</span></h2>
+    <div class="paper-analysis">
+      <div class="paper-title">1. ReSyn: Autonomously Scaling Synthetic Environments for Reasoning Models <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Andre He</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">本文提出ReSyn框架，通过自动扩展合成环境来增强推理模型的强化学习训练，解决验证器构建困难的问题。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20117" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">2. NovaPlan: Zero-Shot Long-Horizon Manipulation via Closed-Loop Video Language Planning <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Jiahui Fu</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">NovaPlan提出一种零样本长程机器人操作方法，结合视觉语言模型与视频生成模型实现闭环任务规划和执行。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20119" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">3. Agentic AI for Scalable and Robust Optical Systems Control <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Zehao Wang</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">AgentOptics提出基于模型上下文协议的光学系统AI代理框架，实现自然语言指令到异构光学设备的自主控制。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20144" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">4. Benchmarking Unlearning for Vision Transformers <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Kairan Zhao</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">本文构建了视觉Transformer的机器遗忘基准数据集，系统评估不同遗忘方法在图像分类任务中的效果与稳定性。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20114" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">5. To Reason or Not to: Selective Chain-of-Thought in Medical Question Answering <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Zaifu Zhan</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Selective CoT方法通过在推理前预测问题难度，选择性使用思维链推理以提高医学问答效率并保持准确率。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20130" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">6. Do Large Language Models Understand Data Visualization Rules? <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Martin Sinnona</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">本文研究大语言模型对数据可视化规则的理解能力，揭示其在可视化推理与执行方面的优势与局限性。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20137" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">7. Mobile-O: Unified Multimodal Understanding and Generation on Mobile Device <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Abdelrahman Shaker</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Mobile-O提出一种紧凑的统一多模态架构，可在移动设备上实现视觉理解与图像生成的端到端处理。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20161" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">8. KNIGHT: Knowledge Graph-Driven Multiple-Choice Question Generation with Adaptive Hardness Calibration <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-02-23</strong></span>
+        <span class="stat">👥 作者: <strong><name>Mohammad Amanlou</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">KNIGHT利用知识图谱驱动的大语言模型生成自适应难度校准的多选题，为检索增强生成系统提供高效评估。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2602.20135" target="_blank">查看论文</a></p>
+    </div>
+    <!-- HuggingFace Models -->
+    <h2>🤗 HuggingFace 热门模型 <span class="meta">(最近7天)</span></h2>
+    <div class="trending-grid">
+      <div class="trending-item" style="background:white;padding:16px;border-radius:8px;border:1px solid #eee;">
+        <div class="trending-item-title">
+          <a href="https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct" target="_blank">meta-llama/Llama-3.1-8B-Instruct</a>
+        </div>
+        <div class="trending-item-meta">
+          <span class="trending-badge">👍 5491</span>
+          <span class="trending-badge">⬇️ 6,095,400</span>
+          <span class="trending-badge">text-generation</span>
+        </div>
+        <div class="chinese-summary" style="margin-top:8px;padding:10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ff9d00;">
+          <p style="margin:0;line-height:1.6;color:#333;font-size:14px;">Meta推出的Llama 3.1系列指令微调模型，拥有80亿参数，支持多语言对话和复杂指令执行。...</p>
+        </div>
+      </div>
+      <div class="trending-item" style="background:white;padding:16px;border-radius:8px;border:1px solid #eee;">
+        <div class="trending-item-title">
+          <a href="https://huggingface.co/openai/gpt-oss-20b" target="_blank">openai/gpt-oss-20b</a>
+        </div>
+        <div class="trending-item-meta">
+          <span class="trending-badge">👍 4398</span>
+          <span class="trending-badge">⬇️ 5,717,889</span>
+          <span class="trending-badge">text-generation</span>
+        </div>
+        <div class="chinese-summary" style="margin-top:8px;padding:10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ff9d00;">
+          <p style="margin:0;line-height:1.6;color:#333;font-size:14px;">OpenAI开源的200亿参数GPT变体模型，专注于大规模语言理解和生成任务。...</p>
+        </div>
+      </div>
+      <div class="trending-item" style="background:white;padding:16px;border-radius:8px;border:1px solid #eee;">
+        <div class="trending-item-title">
+          <a href="https://huggingface.co/openai-community/gpt2" target="_blank">openai-community/gpt2</a>
+        </div>
+        <div class="trending-item-meta">
+          <span class="trending-badge">👍 3116</span>
+          <span class="trending-badge">⬇️ 8,528,938</span>
+          <span class="trending-badge">text-generation</span>
+        </div>
+        <div class="chinese-summary" style="margin-top:8px;padding:10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ff9d00;">
+          <p style="margin:0;line-height:1.6;color:#333;font-size:14px;">OpenAI社区托管的GPT-2模型，经典的大型语言模型，可用于文本生成、对话等任务。...</p>
+        </div>
+      </div>
+      <div class="trending-item" style="background:white;padding:16px;border-radius:8px;border:1px solid #eee;">
+        <div class="trending-item-title">
+          <a href="https://huggingface.co/openai/clip-vit-large-patch14" target="_blank">openai/clip-vit-large-patch14</a>
+        </div>
+        <div class="trending-item-meta">
+          <span class="trending-badge">👍 1965</span>
+          <span class="trending-badge">⬇️ 6,677,102</span>
+          <span class="trending-badge">zero-shot-image-classification</span>
+        </div>
+        <div class="chinese-summary" style="margin-top:8px;padding:10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ff9d00;">
+          <p style="margin:0;line-height:1.6;color:#333;font-size:14px;">OpenAI开发的CLIP视觉语言模型，采用ViT-Large-patch14架构，能实现图像与文本的跨模态理解。...</p>
+        </div>
+      </div>
+      <div class="trending-item" style="background:white;padding:16px;border-radius:8px;border:1px solid #eee;">
+        <div class="trending-item-title">
+          <a href="https://huggingface.co/Qwen/Qwen3-0.6B" target="_blank">Qwen/Qwen3-0.6B</a>
+        </div>
+        <div class="trending-item-meta">
+          <span class="trending-badge">👍 1102</span>
+          <span class="trending-badge">⬇️ 10,036,447</span>
+          <span class="trending-badge">text-generation</span>
+        </div>
+        <div class="chinese-summary" style="margin-top:8px;padding:10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ff9d00;">
+          <p style="margin:0;line-height:1.6;color:#333;font-size:14px;">阿里巴巴Qwen3系列轻量级模型，6亿参数，适合资源受限场景下的推理任务。...</p>
+        </div>
+      </div>
+      <div class="trending-item" style="background:white;padding:16px;border-radius:8px;border:1px solid #eee;">
+        <div class="trending-item-title">
+          <a href="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct" target="_blank">Qwen/Qwen2.5-7B-Instruct</a>
+        </div>
+        <div class="trending-item-meta">
+          <span class="trending-badge">👍 1093</span>
+          <span class="trending-badge">⬇️ 16,620,493</span>
+          <span class="trending-badge">text-generation</span>
+        </div>
+        <div class="chinese-summary" style="margin-top:8px;padding:10px;background:#f8f9fa;border-radius:6px;border-left:3px solid #ff9d00;">
+          <p style="margin:0;line-height:1.6;color:#333;font-size:14px;">阿里巴巴Qwen2.5系列的70亿参数指令微调版本，擅长指令跟随和对话生成。...</p>
+        </div>
+      </div>
+    </div>
+    <!-- Direction -->
+    <h2>💡 方向性判断</h2>
+    <table>
+      <tr><th>方向</th><th>判断</th><th>关键信号</th></tr>
+      
+      <tr><td>扩散模型高效化</td><td>扩散模型向高速、低延迟方向演进，Google DeepMind的Gemini Diffusion成为标杆</td><td>Gemini Diffusion相关视频和文章引发高度关注，评测显示生成速度显著提升</td></tr>
+      
+      <tr><td>开源大模型生态</td><td>开源大模型持续逼近闭源能力，Llama 3.1系列成为社区标杆</td><td>HuggingFace热门模型前两位均为开源模型，meta-llama/Llama-3.1-8B-Instruct登顶</td></tr>
+      
+      <tr><td>推理能力增强</td><td>AI系统向更高推理能力演进，自主 scaling 合成环境成为新路径</td><td>ReSyn论文专注于推理模型的自主扩展，反映行业对推理能力的重视</td></tr>
+      
+      <tr><td>多模态与视频理解</td><td>视频语言规划与闭环控制结合，实现零样本长视野操作</td><td>NovaPlan聚焦零样本视频语言规划，代表多模态理解新突破</td></tr>
+      
+      <tr><td>智能体系统</td><td>AI智能体向物理世界控制扩展，光学系统等领域开始受益</td><td>Agentic AI for Optical Systems Control表明智能体在实体系统控制中的应用</td></tr>
+      
+    </table>
+    
+    <div class="footer">
+      <p>by ⚡ 闪电 · <a href="https://github.com/chendagui16/ai-daily-brief">GitHub</a></p>
+    </div>
+  </div>
+</body>
+</html>
