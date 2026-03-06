@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日AI深度简报 - 2026-03-06</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.8; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; color: #333; }
+    .container { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 12px; font-size: 28px; }
+    h2 { color: #16213e; margin-top: 36px; font-size: 22px; }
+    h3 { color: #0f3460; font-size: 18px; margin-top: 24px; }
+    .meta { color: #666; font-size: 14px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 4px 12px; background: #e94560; color: white; border-radius: 20px; font-size: 12px; margin-left: 10px; }
+    .llm-badge { background: #7c3aed; }
+    .card { background: #f8f9fa; border-left: 4px solid #e94560; padding: 16px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .analysis-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 24px; border-radius: 12px; margin: 24px 0; }
+    .analysis-box h3 { color: white; margin-top: 0; }
+    .analysis-box p { margin: 10px 0; line-height: 1.8; }
+    .news-analysis, .paper-analysis { background: #fafafa; padding: 20px; border-radius: 12px; margin: 16px 0; border: 1px solid #eee; }
+    .news-analysis h3, .paper-analysis h3 { margin-top: 0; color: #1a1a2e; }
+    .news-analysis p, .paper-analysis p { margin: 8px 0; color: #444; line-height: 1.9; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #e94560; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    .tag { display: inline-block; background: #e94560; color: white; padding: 4px 12px; border-radius: 16px; font-size: 12px; margin-right: 8px; }
+    .stats { display: flex; gap: 16px; margin: 12px 0; flex-wrap: wrap; }
+    .stat { background: #f0f0f0; padding: 8px 16px; border-radius: 8px; font-size: 14px; }
+    .stat strong { color: #e94560; }
+    a { color: #e94560; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .divider { border-top: 1px dashed #ddd; margin: 32px 0; }
+    .footer { text-align: center; color: #999; margin-top: 40px; font-size: 14px; }
+    .nav { text-align: center; margin-bottom: 20px; }
+    .nav a { margin: 0 10px; color: #666; }
+    .trends-box { background: #f0f9ff; padding: 20px; border-radius: 12px; margin: 16px 0; border-left: 4px solid #0ea5e9; }
+    .trends-box p { margin: 8px 0; color: #333; line-height: 1.8; }
+    .news-title { font-size: 16px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
+    .trend-hot { color: #e94560; font-weight: bold; }
+    .trend-watch { color: #f59e0b; font-weight: bold; }
+    .trend-turn { color: #8b5cf6; font-weight: bold; }
+    .summary-line { color: #333; font-size: 15px; margin: 8px 0; padding-left: 12px; border-left: 3px solid #e94560; }
+    .signal-line { color: #666; font-size: 14px; margin: 6px 0; }
+    .paper-title { font-size: 15px; font-weight: 600; color: #0f3460; margin-bottom: 8px; }
+    .date-badge { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 8px; font-weight: normal; }
+    .trending-section { margin: 24px 0; }
+    .trending-card { background: #f8f9fa; border-radius: 12px; padding: 20px; margin: 12px 0; }
+    .trending-card h3 { margin-top: 0; color: #16213e; display: flex; align-items: center; gap: 8px; }
+    .trending-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+    .trending-item { background: white; border-radius: 8px; padding: 12px; border: 1px solid #eee; }
+    .trending-item-title { font-weight: 600; color: #0f3460; font-size: 14px; }
+    .trending-item-title a { color: #0f3460; text-decoration: none; }
+    .trending-item-title a:hover { color: #e94560; }
+    .trending-item-meta { font-size: 12px; color: #666; margin-top: 6px; }
+    .trending-item-desc { font-size: 13px; color: #555; margin-top: 6px; line-height: 1.5; }
+    .trending-badge { display: inline-block; padding: 2px 8px; background: #e0f2fe; color: #0284c7; border-radius: 12px; font-size: 11px; margin-right: 6px; }
+    .chinese-analysis { background: #fff3cd; padding: 12px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #ffc107; }
+    .chinese-analysis strong { color: #856404; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="https://chendagui16.github.io/ai-daily-brief/">← 返回主页</a>
+    </div>
+    
+    <h1>📡 每日AI深度简报 <span class="badge new-tag">+2增量</span><span class="badge llm-badge">🤖 LLM分析</span></h1>
+    <p class="meta">2026-03-06 · 由闪电AI助手生成</p>
+    
+    <!-- Core Trend -->
+    <div class="analysis-box">
+      <h3>🔥 今日核心观点</h3>
+      <p><strong>今日核心观点:</strong> AI应用层持续爆发，Google开放Canvas AI功能降低创作门槛，同时合成媒体检测需求激增，显示生成与检测形成新一轮对抗博弈</p>
+    </div>
+    
+    <!-- News with Chinese Summary -->
+    <h2>📰 AI新闻摘要</h2>
+    <div class="news-analysis">
+      <div class="news-title">1. Google Launches Canvas in AI Mode for All U.S. Users <span class="date-badge">2026-03-05</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Google在美国为所有用户推出AI模式的Canvas功能，该功能早在2025年3月就已在独立Gemini应用中提供写作、编码及音频概览支持。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://winbuzzer.com/2026/03/05/google-gemini-canvas-ai-mode-all-us-users-coding-writing-xcxwbn/" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">2. Hive: Enterprise-grade detection and moderation for synthetic media – ContentCreators.com <span class="date-badge">2026-03-05</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e94560;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">Hive推出企业级合成媒体检测与审核平台，支持多语言环境，提供Python和cURL代码示例，适合企业级大批量处理需求。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://contentcreators.com/tools/hive" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="trending-section">
+    <div class="trending-card">
+      <h3>🐙 GitHub 热门项目 <span class="meta">(最近7天)</span></h3>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/LeoYeAI/openclaw-master-skills" target="_blank">openclaw-master-skills</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1132</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">一个每周更新的OpenClaw技能精选列表，收集了127个以上的AI技能资源</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/madewithai/pancakeswap-prediction-bot" target="_blank">pancakeswap-prediction-bot</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 214</span>
+            <span class="trending-badge">TypeScript</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">运行在币安智能链上的PancakeSwap自动预测交易机器人，支持动量策略和趋势反转</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/elder-plinius/OBLITERATUS" target="_blank">OBLITERATUS</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1363</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">一个具有突破性的Python项目，旨在解放和突破技术限制</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/tanishqkumar/ssd" target="_blank">ssd</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 521</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">支持投机解码的轻量级AI模型推理引擎</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/PKU-YuanGroup/Helios" target="_blank">Helios</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 487</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">实时长视频生成模型，能够实现真正的长视频即时合成</p>
+          </div>
+        </div>
+        <div class="trending-item" style="margin-bottom:12px;">
+          <div class="trending-item-title">
+            <a href="https://github.com/ylytdeng/wechat-decrypt" target="_blank">wechat-decrypt</a>
+          </div>
+          <div class="trending-item-meta">
+            <span class="trending-badge">⭐ 1493</span>
+            <span class="trending-badge">Python</span>
+          </div>
+          <div class="chinese-summary" style="margin-top: 8px; padding: 10px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #6f42c1;">
+            <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">微信数据库解密工具，可从内存提取密钥并实时解密SQLCipher 4数据库</p>
+          </div>
+        </div>
+    </div>
+    </div>
+    <h2>📡 技术博客精选</h2>
+    <div class="news-analysis">
+      <div class="news-title">1. Introducing GPT‑5.4 <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">OpenAI推出GPT-5.4系列模型，包括gpt-5.4和gpt-5.4-pro两个版本，可在ChatGPT和Codex CLI中使用。该模型具备100万token的超长上下文窗口，知识截止日期为2025年8月31日。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/2026/Mar/5/introducing-gpt54/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">2. Can coding agents relicense open source through a “clean room” implementation of code? <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">过去几个月，编码代理在创建代码的“清洁室”实现方面表现出色。这种模式最著名的案例是1982年Compaq通过一支团队逆向工程IBM BIOS来创建规范，再由另一支团队根据规范实现，从而在未侵犯版权的情况下克隆了BIOS。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/2026/Mar/5/chardet/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">3. Anti-patterns: things to avoid <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">本文探讨了智能体工程中常见的反模式，强调了代码审查的重要性。作者指出，向协作者提交未经自己审查的代码是一种常见且令人沮丧的反模式，呼吁开发者在提交Pull Request前务必先自行审查代码。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">4. Something is afoot in the land of Qwen <span class="date-badge">simonwillison.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">阿里巴巴Qwen团队近期发布了出色的开源模型家族Qwen 3.5，但作者担心这可能成为该团队的最后一版产品，因为过去24小时内团队有多位重要成员离职。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://simonwillison.net/2026/Mar/4/qwen/#atom-everything" target="_blank">阅读原文</a></p>
+    </div>
+    <div class="news-analysis">
+      <div class="news-title">5. Steve Jobs in 2007, on Apple’s Pursuit of PC Market Share: ‘We Just Can’t Ship Junk’ <span class="date-badge">daringfireball.net</span></div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0ea5e9;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">2007年8月，Apple在Infinite Loop Town Hall礼堂举办了Mac发布会，推出了新版iMac以及iLife '08（包括iPhoto和iMovie的重大更新）和iWork '08（首次推出Numbers 1.0）。Steve Jobs当时表示Apple不会追求PC市场份额出货垃圾产品，而是专注于提供高质量产品。</p>
+      </div>
+      <p style="margin: 8px 0 0;">🔗 <a href="https://www.youtube.com/watch?v=U37Ds3RvyoM" target="_blank">阅读原文</a></p>
+    </div>
+    <!-- arXiv Papers -->
+    <h2>📄 arXiv 热门论文 <span class="meta">(最近7天)</span></h2>
+    <div class="paper-analysis">
+      <div class="paper-title">1. Post-inflationary axion constraints from the Lyman-$α$ forest <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Olga Garcia-Gallego</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该研究利用Lyman-α森林数据对轴子的等曲率扰动成分进行了最新限制，进一步约束了冷暗物质候选者轴子的天体物理性质。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04401" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">2. SimpliHuMoN: Simplifying Human Motion Prediction <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Aadya Agrawal</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该论文提出了SimpliHuMoN框架，旨在简化人体运动预测任务，将轨迹预测和姿态预测统一处理，克服了现有方法难以同时兼顾两项任务的难题。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04399" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">3. HyQBench: A Benchmark Suite for Hybrid CV-DV Quantum Computing <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Shubdeep Mohapatra</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该工作提出了HyQBench基准套件，用于评估混合连续变量-离散变量量子计算系统的性能，推动了量子计算领域的发展。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04398" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">4. Abelian-normal decimal expansions <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>John M. Campbell</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该研究探讨了正规数数字扩展中保持或破坏正规性的重排操作，引入了有限子词的重排概念，推进了正规数理论的研究。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04396" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">5. Accurate and Efficient Hybrid-Ensemble Atmospheric Data Assimilation in Latent Space with Uncertainty Quantification <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Hang Fan</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该论文提出了在潜空间进行高效混合集合大气数据同化并量化不确定性的方法，提升了天气预测和气候再分析的准确性。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04395" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">6. bayesgrid: An Open-Source Python Tool for Generating Probabilistic Synthetic Transmission-Distribution Grids Using Bayesian Hierarchical Models <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Henrique O. Caetano</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该工具包利用贝叶斯层次模型和OpenStreetMap公开数据，为全球任意地区生成合成输配电网络，助力电力系统研究。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04393" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">7. A framework for missing-energy searches with anomalous light vectors <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Luca Di Luzio</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该框架研究了与电弱异常流耦合的轻量自旋-1规范玻色子，分析了为保证规范不变性所需的新型手征费米子及其质量产生机制。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04394" target="_blank">查看论文</a></p>
+    </div>
+    <div class="paper-analysis">
+      <div class="paper-title">8. SELDON: Supernova Explosions Learned by Deep ODE Networks <span class="date-badge">arXiv</span></div>
+      <div class="stats">
+        <span class="stat">📅 发布: <strong>2026-03-04</strong></span>
+        <span class="stat">👥 作者: <strong><name>Jiezhong Wu</name></strong></span>
+      </div>
+      <div class="chinese-summary" style="margin: 12px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #7c3aed;">
+        <p style="margin: 0; line-height: 1.8; color: #333;">该研究开发了SELDON深度常微分方程网络，能够从 Vera C. Rubin 望远镜海量的超新星爆发警报中连续预测光学瞬变事件。...</p>
+      </div>
+      <p>🔗 <a href="https://arxiv.org/abs/2603.04392" target="_blank">查看论文</a></p>
+    </div>
+    <!-- Direction -->
+    <h2>💡 方向性判断</h2>
+    <table>
+      <tr><th>方向</th><th>判断</th><th>关键信号</th></tr>
+      
+      <tr><td>AI助手与协作工具普及化</td><td>科技巨头将AI深度集成到生产力工具，AI写作、编程、协作成为标配功能</td><td>Google向全美用户开放Canvas in AI Mode</td></tr>
+      
+      <tr><td>合成媒体检测与审核</td><td>企业级合成媒体检测需求快速增长，内容真实性验证成为刚需</td><td>Hive推出企业级合成媒体检测和审核解决方案</td></tr>
+      
+      <tr><td>具身智能与机器人技能</td><td>机器人技能学习与自动化成为开源社区热点</td><td>GitHub热门项目openclaw-master-skills关注机器人技能</td></tr>
+      
+      <tr><td>AI for Science深入发展</td><td>AI在科学研究中的应用从理论探索走向实际基准测试</td><td>HyQBench提供混合量子计算基准测试，SimpliHuMoN简化人体运动预测</td></tr>
+      
+      <tr><td>AI在金融领域的应用</td><td>AI驱动的预测和自动化交易工具持续吸引开发者关注</td><td>pancakeswap-prediction-bot进入GitHub热门</td></tr>
+      
+    </table>
+    
+    <div class="footer">
+      <p>by ⚡ 闪电 · <a href="https://github.com/chendagui16/ai-daily-brief">GitHub</a></p>
+    </div>
+  </div>
+</body>
+</html>
